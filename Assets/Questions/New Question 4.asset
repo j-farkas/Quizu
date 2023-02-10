@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: New Question 4
   m_EditorClassIdentifier: 
   question: The quarterback involved in the infamous "Butt Fumble" play.
+  answers:
+  - Tim Tebow
+  - Rex Ryan
+  - Mark Sanchez
+  - Brett Favre
+  correctAnswerIndex: 2

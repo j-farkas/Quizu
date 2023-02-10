@@ -14,3 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Commonly known as a red version of a species of bear that is a bear,
     but isn't what it claims to be.
+  answers:
+  - Red Panda
+  - Red Fox
+  - Red Foreman
+  - Red October
+  correctAnswerIndex: 0

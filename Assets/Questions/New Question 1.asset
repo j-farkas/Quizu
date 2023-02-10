@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: New Question 1
   m_EditorClassIdentifier: 
   question: This bushy tailed rodent is often found within trees of urban areas.
+  answers:
+  - Squirrel
+  - Rat
+  - Opossum
+  - Fox
+  correctAnswerIndex: 0

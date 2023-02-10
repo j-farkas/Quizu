@@ -14,3 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Famous for being the only president to actively dodge a shoe while giving
     a speech.
+  answers:
+  - George H. W. Bush
+  - George W. Bush
+  - Bill Clinton
+  - Bob Dole
+  correctAnswerIndex: 1

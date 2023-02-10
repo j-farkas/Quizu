@@ -15,3 +15,9 @@ MonoBehaviour:
   question: This multi-talented actor, football player, and stabber was known for
     his excellent play at USC, his work in the naked gun movies, and the brutal murder
     of his ex-wife.
+  answers:
+  - Jim Brown
+  - Tim Tebow
+  - Leslie Nielsen
+  - O.J. Simpson
+  correctAnswerIndex: 3
