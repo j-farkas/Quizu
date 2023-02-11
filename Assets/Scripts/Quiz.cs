@@ -6,16 +6,41 @@ using UnityEngine.UI;
 
 public class Quiz : MonoBehaviour
 {
+    [Header("Questions")]
     [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] QuestionSO question;
+
+    [Header("Answers")]
     [SerializeField] GameObject[] answerButtons;
     int correctAnswerIndex;
+
+    [Header("Button Colors")]
     [SerializeField] Sprite defaultAnswerSprite;
     [SerializeField] Sprite correctAnswerSprite;
 
+    [Header("Timer")]
+    [SerializeField] Image timerImage;
+    Timer timer;
+
     void Start()
     {
+        timer = FindObjectOfType<Timer>();
         getNextQuestion();
+    }
+
+    void Update() {
+        timerImage.fillAmount = timer.fillFraction;
+        if(timer.loadNextQuestion)
+        {
+            getNextQuestion();
+            timer.loadNextQuestion = false;
+        }
+        if(timer.timerValue <= .01)
+        {
+            Debug.Log("Got Here");
+            OnAnswerSelected(-1);
+        }
+        
     }
 
     void getNextQuestion()
@@ -65,6 +90,8 @@ public class Quiz : MonoBehaviour
             buttonImage.sprite = correctAnswerSprite;
         }
         setButtonState();
+        timer.Answered = true;
+        timer.CancelTimer();
     }
 
 }
