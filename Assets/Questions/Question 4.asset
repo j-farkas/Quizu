@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 049d0a6e05690b1458d631291e42ec8c, type: 3}
-  m_Name: New Question 2
+  m_Name: Question 4
   m_EditorClassIdentifier: 
-  question: Commonly known as a red version of a species of bear that is a bear,
-    but isn't what it claims to be.
+  question: The quarterback involved in the infamous "Butt Fumble" play.
   answers:
-  - Red Panda
-  - Red Fox
-  - Red Foreman
-  - Red October
-  correctAnswerIndex: 0
+  - Tim Tebow
+  - Rex Ryan
+  - Mark Sanchez
+  - Brett Favre
+  correctAnswerIndex: 2
