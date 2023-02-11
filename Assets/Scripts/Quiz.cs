@@ -23,9 +23,14 @@ public class Quiz : MonoBehaviour
     [SerializeField] Image timerImage;
     Timer timer;
 
+    [Header("Scoring")]
+    [SerializeField] TextMeshProUGUI scoreText;
+    ScoreKeeper scoreKeeper;
+
     void Start()
     {
         timer = FindObjectOfType<Timer>();
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
         getNextQuestion();
     }
 
@@ -95,11 +100,13 @@ public class Quiz : MonoBehaviour
     {
         Image buttonImage;
         correctAnswerIndex = currentQuestion.getCorrectAnswerIndex();
+        scoreKeeper.incrementQuestionsSeen();
         if(i == correctAnswerIndex)
         {
             questionText.text = "Correct";
             buttonImage = answerButtons[i].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
+            scoreKeeper.incrementCorrectAnswers();
         }else 
         {
             questionText.text = "The correct answer was: "+ currentQuestion.getAnswer(correctAnswerIndex);
@@ -110,6 +117,7 @@ public class Quiz : MonoBehaviour
         timer.Answered = true;
         timer.CancelTimer();
         questions.Remove(currentQuestion);
+        scoreText.text = "Score: " + scoreKeeper.calculateScore() + "%";
     }
 
 }
