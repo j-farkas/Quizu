@@ -39,13 +39,13 @@ public class Quiz : MonoBehaviour
         getNextQuestion();
         progressBar.maxValue = questions.Count;
         progressBar.minValue = 0;
+        progressBar.value = 0;
     }
 
     void Update() {
         timerImage.fillAmount = timer.fillFraction;
         if(timer.timerValue <= .01 && timer.isAnsweringQuestion)
         {
-            Debug.Log("Got Here");
             OnAnswerSelected(69);
         }
         if(timer.loadNextQuestion)
@@ -106,6 +106,7 @@ public class Quiz : MonoBehaviour
     public void OnAnswerSelected(int i)
     {
         Image buttonImage;
+        Debug.Log(progressBar.value + " Of " + progressBar.maxValue);
         correctAnswerIndex = currentQuestion.getCorrectAnswerIndex();
         scoreKeeper.incrementQuestionsSeen();
         if(i == correctAnswerIndex)
@@ -125,7 +126,7 @@ public class Quiz : MonoBehaviour
         timer.CancelTimer();
         questions.Remove(currentQuestion);
         scoreText.text = "Score: " + scoreKeeper.calculateScore() + "%";
-        if(progressBar.value == progressBar.maxValue)
+        if(progressBar.value+1 == progressBar.maxValue)
         {
             isComplete = true;
         }else{
